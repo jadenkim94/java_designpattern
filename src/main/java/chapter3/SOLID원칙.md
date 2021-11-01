@@ -24,7 +24,7 @@
 #### OCP 구현방법
 - 확장이 필요한 행위를 추상화(Abstraction) 한다.
 - 추상화된 부분은 외부에서 주입한다.
-[ocp]()
+![ocp](https://github.com/jadenkim94/java_designpattern/blob/main/src/main/java/chapter3/img/ocp_abstraction.png)
 
 ----
 
@@ -49,9 +49,8 @@
 
 - 클라이언트는 자신이 이용하지 않는 기능에는 영향을 받지 않아야한다. 인터페이스 분리 원칙이란 이를 위해서 인터페이스를 클라이언트에 특화되도록 분리 하는 것을 의미한다. 
 #### 인터페이스 분리전
-[인터페이스분리전]()
+![인터페이스분리전](https://github.com/jadenkim94/java_designpattern/blob/main/src/main/java/chapter3/img/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B6%84%EB%A6%AC%EC%A0%84.png)
 
 #### 인터페이스 분리후
-[인터페이스분리후]()
-
+![인터페이스분리후](https://github.com/jadenkim94/java_designpattern/blob/main/src/main/java/chapter3/img/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B6%84%EB%A6%AC%ED%9B%84.png)
 
