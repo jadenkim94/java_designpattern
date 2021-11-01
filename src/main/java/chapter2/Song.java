@@ -10,4 +10,6 @@ public class Song {
     public double getPrice(){
         return 10.0 - (10.0 * discountMode.getDiscountRate());
     }
+
+
 }
