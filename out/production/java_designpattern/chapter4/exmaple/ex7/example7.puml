@@ -1,0 +1,52 @@
+@startuml
+autonumber
+participant GUI
+participant GridLayout
+participant BorderLayout
+participant Panel as p1
+participant FlowLayout
+participant Panel as p2
+
+
+
+create GridLayout
+GUI -> GridLayout : <<create>>
+GUI -> GUI : setLayout(a2)
+activate GUI
+deactivate GUI
+create BorderLayout
+
+GUI -> BorderLayout : <<create>>
+
+
+create p1
+
+GUI -> p1 : <<create>> new Panel(a3)
+
+
+GUI -> p1 : add("West", w)
+activate p1
+deactivate p1
+
+GUI -> p1 : add("Center", tf)
+activate p1
+deactivate p1
+
+create FlowLayout
+
+GUI -> FlowLayout : <<create>>
+
+
+
+create p2
+GUI -> p2 : <<create>> new Panel(a4)
+
+
+GUI -> p2 : add(b)
+activate p2
+deactivate p2
+
+GUI -> GUI : add(p2)
+activate GUI
+deactivate GUI
+@enduml
