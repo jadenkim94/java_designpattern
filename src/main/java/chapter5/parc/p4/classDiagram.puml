@@ -1,0 +1,93 @@
+@startuml
+class JFrame{}
+class BallFrame{
+- {static} long serialVersionUID = 1L
++ {static} int WIDTH = 500
++ {static} final int HEIGHT = 400
+- Field field
++ BallFrame(balls: Ball[])
+}
+JFrame <|-- BallFrame
+
+class JPanel{}
+interface Runnable{}
+class Graphics{}
+class Field {
+- {static} long serialVersionUID = 1L
+- Ball[] balls
++ paint(g: Graphics)
++ run()
+}
+Graphics <.. Field
+JPanel <|-- Field
+Runnable <|.. Field
+
+BallFrame -> Field
+
+class Ball{
++ {static} int SIZE = 20
++ {static} int INTERVAL = 10
+- x: int
+- y: int
+- xInterval: int
+- yInterval: int
+- directionStrategy: DirectionStrategy
+- drawStrategy: DrawStrategy
+- color: Color
+
+
+
+
++ Ball(x: int, y: int)
++ getter(), setter()
++ draw()
++ move()
++ run()
+}
+BallFrame ..> Ball
+class Color{}
+Color <-- Ball
+
+abstract class DirectionStrategy{
++ move(ball: Ball)
+}
+
+DirectionStrategy <.. Ball
+HorizontalMoveStrategy --|> DirectionStrategy
+VerticalMoveStrategy --|> DirectionStrategy
+DiagonalMoveStrategy --|> DirectionStrategy
+class HorizontalMoveStrategy {
++ move(ball: Ball)
+}
+class VerticalMoveStrategy {
++ move(ball: Ball)
+}
+
+class DiagonalMoveStrategy {
++ move(ball: Ball)
+}
+
+DrawStrategy <.. Ball
+abstract class DrawStrategy{
++ draw(ball: Ball)
+}
+
+RedDrawStrategy --|> DrawStrategy
+BlueDrawStrategy --|> DrawStrategy
+class RedDrawStrategy{
++ draw(ball: Ball)
+}
+class BlueDrawStrategy{
++ draw(ball: Ball)
+}
+
+@enduml
+Ball - 공 => Context
+DirectionStrategy - 공이 움직일 방향에 대한 전략 클래스       => Strategy
+HorizontalMoveStrategy - 공의 수평 방향 움직임에 대한 클래스  => Concrete Strategy
+VerticalMoveStrategy - 공의 수직 방향 움직임에 대한 클래스    => Concrete Strategy
+DiagonalMoveStrategy - 공의 대각 방향 움직임에 대한 클래스    => Concrete Strategy
+DrawStrategy - 공의 색깔에 대한 전략 클래스    => Strategy
+BlueDrawStrategy - 공을 파랗게 그리는 클래스  => Concrete Strategy
+RedDrawStrategy  - 공을 빨갛게 그리는 클래스  => Concrete Strategy
+
