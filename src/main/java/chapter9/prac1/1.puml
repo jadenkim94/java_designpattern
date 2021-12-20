@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Battery{
+    - int level = 100
+    - BatteryLevelDisplay
+    - LowBatteryWarning
+    + setDisplay(BatteryLevelDisplay display): void
+    + setWarning(LowBatteryWarning warning): void
+    + consume(int amount): void
+    + getLevel(): int
+}
+
+class BatteryLevelDisplay{
+    - Battery battery
+    + BatteryLevelDisplay(Battery battery): BatteryLevelDisplay
+    + update(): void
+}
+
+class LowBatteryWarning{
+    -{static} LOW_BATTERY: int = 30
+    - Battery battery
+    + LowBatteryWarning(Battery battery): LowBatteryWarning
+    + update(): void
+}
+
+
+class PrinterFactory {
+  -{static} printerFactory: PrinterFactory
+
+  #PrinterFatory()
+  +{static} getPrinterFactory(): PrinterFactory
+  +{static} setPrinterFactory(PrinterFactory p): void
+  +getPrinter(): Printer
+}
+
+Battery "-battery" <--> "-display" BatteryLevelDisplay
+Battery "-battery" <--> "-warning" LowBatteryWarning
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'Subject'
+class Battery{
+   - Observer : Observer[] observer
+   + attachObserver(Observer): void
+   + detachObserver(Observer): void
+   + consume(): void
+   + getLevel(): int
+}
+
+'Observer'
+interface Observer{
+ +update(): void
+}
+
+'ConcreteObserver'
+class BatteryLevelDisplay{
+ +update(): void
+}
+
+'ConcreteObserver'
+class LowBatteryWarning{
+ +update(): void
+}
+
+Battery <-- Observer
+Observer <|.. BatteryLevelDisplay
+Observer <|.. LowBatteryWarning
+
+@enduml
