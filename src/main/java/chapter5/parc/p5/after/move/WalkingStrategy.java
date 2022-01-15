@@ -1,5 +1,6 @@
 package chapter5.parc.p5.after.move;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -19,4 +20,17 @@ public class WalkingStrategy implements MoveStrategy{
             } catch (InterruptedException e){}
         }
     }
+
+
+   /* @Override
+    public Icon getImageIcon(String name) {
+        return new ImageIcon("./src/"+name);
+    }
+
+    @Override
+    public String[] getImageNames() {
+        return walkImg;
+    }*/
+
+
 }

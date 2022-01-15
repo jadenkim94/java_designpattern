@@ -4,6 +4,6 @@ public class GeneralShoot implements ShootStrategy{
 
     @Override
     public void shoot() {
-        System.out.println("파워슈팅");
+        System.out.println("일반적인 슈팅");
     }
 }

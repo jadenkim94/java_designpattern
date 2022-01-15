@@ -1,0 +1,20 @@
+@startuml
+class TwoButtonController{
+    -Tv tv
+    + TwoButtonController(tv: TV)
+    + button1Pressed(): void
+    + button2Pressed(): void
+}
+
+
+
+class Tv{
+    - powerOn: boolean
+    - muteOn: boolean
+    + power(): void
+    + mute(): void
+}
+
+TwoButtonController --> Tv
+
+@enduml

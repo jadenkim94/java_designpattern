@@ -52,7 +52,7 @@ abstract class DirectionStrategy{
 + move(ball: Ball)
 }
 
-DirectionStrategy <.. Ball
+DirectionStrategy *-- Ball
 HorizontalMoveStrategy --|> DirectionStrategy
 VerticalMoveStrategy --|> DirectionStrategy
 DiagonalMoveStrategy --|> DirectionStrategy
@@ -67,7 +67,7 @@ class DiagonalMoveStrategy {
 + move(ball: Ball)
 }
 
-DrawStrategy <.. Ball
+DrawStrategy *-- Ball
 abstract class DrawStrategy{
 + draw(ball: Ball)
 }

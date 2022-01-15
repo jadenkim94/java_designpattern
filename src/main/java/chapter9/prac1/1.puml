@@ -24,16 +24,7 @@ class LowBatteryWarning{
 }
 
 
-class PrinterFactory {
-  -{static} printerFactory: PrinterFactory
-
-  #PrinterFatory()
-  +{static} getPrinterFactory(): PrinterFactory
-  +{static} setPrinterFactory(PrinterFactory p): void
-  +getPrinter(): Printer
-}
-
-Battery "-battery" <--> "-display" BatteryLevelDisplay
-Battery "-battery" <--> "-warning" LowBatteryWarning
+Battery "-battery" -- "-display" BatteryLevelDisplay
+Battery "-battery" -- "-warning" LowBatteryWarning
 
 @enduml

@@ -16,8 +16,10 @@ class ConcreteStrategy2{
  + doSomething()
 }
 
-Context o-- Strategy
+Context *-- Strategy
 Strategy <|.. ConcreteStrategy1
 Strategy <|.. ConcreteStrategy2
 
 @enduml
+
+- 합성관계일 것 같은데.. 답지에는 집약관계

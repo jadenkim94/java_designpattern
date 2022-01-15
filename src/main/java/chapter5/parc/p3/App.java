@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        Member member = new Member("jaden", 10000);
+        Member member = new Member("jaden", 5000);
         Book book1 = new Book("작가", LocalDate.of(1999,10,5), 50000);
         Book book2 = new Book("작가2", LocalDate.of(1999,10,5), 50000);
 
@@ -14,8 +14,8 @@ public class App {
         books.add(book2);
 
 
-        member.rentBook(books, new MemberDiscount());
-        System.out.println(member.getRentalAmount());
+        member.buyBook(books, new OldBookDiscount());
+        System.out.println("누적 대여 금액 " + member.getRentalAmount());
 
 
     }
