@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+class GPS {
+ + findCurrentLocation(): Location
+}
+class CheapGPS{
++ findCurrentLocation(): Location
+}
+class ExpensiveGPS{
++ findCurrentLocation(): Location
+}
+GPS <|-- CheapGPS
+GPS <|-- ExpensiveGPS
+
+class Map {
+}
+class SmallMap{}
+class LargeMap{}
+Map <|-- SmallMap
+Map <|-- LargeMap
+
+class Screen {
++drawMap(map: Map):void
+}
+class SDScreen {
++drawMap(map: Map):void
+}
+class HDScreen {
++drawMap(map: Map):void
+}
+
+Screen <|-- SDScreen
+Screen <|-- HDScreen
+
+class PathFinder{
++findPath(from: Location, to: Location): Path
+}
+class SlowPathFinder{
++findPath(from: Location, to: Location): Path
+}
+class FastPathFinder{
++findPath(from: Location, to: Location): Path
+}
+
+PathFinder <|-- SlowPathFinder
+PathFinder <|-- FastPathFinder
+
+@enduml

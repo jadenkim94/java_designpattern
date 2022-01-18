@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface NavigationFactory{
+    + createGPS(): GPS
+    + createScreen(): Screen
+    + createMap(): Map
+    + createPathFinder(): PathFinder
+}
+
+class BasicNavigationFactory {
+    + createGPS(): GPS
+    + createScreen(): Screen
+    + createMap(): Map
+    + createPathFinder(): PathFinder
+}
+
+class PremiumNavigationFactory {
+    + createGPS(): GPS
+    + createScreen(): Screen
+    + createMap(): Map
+    + createPathFinder(): PathFinder
+}
+
+NavigationFactory <|.. BasicNavigationFactory
+NavigationFactory <|.. PremiumNavigationFactory
+
+@enduml
