@@ -3,7 +3,7 @@ package chapter13.prac1;
 public class Client2 {
 
     public static void main(String[] args) {
-        NavigationFactory factory = new BasicNavigationFactory();
+        NavigationFactory factory = new PremiumNavigationFactory();
         GPS gps = factory.createGPS();
         Screen screen = factory.createScreen();
         PathFinder pathFinder = factory.createPathFinder();
